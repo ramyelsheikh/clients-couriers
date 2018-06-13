@@ -1,0 +1,26 @@
+{
+  "name": "ramyelsheikh/client-couriers",
+  "description": "Client Consumes different courier APIs, with the ability to add more couriers without changing code implementation of the client",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Edfa3ly\\": "src/Edfa3ly"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Edfa3ly\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ramy ElSheikh",
+      "email": "ramy.elsheikh@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.0",
+    "phpunit/phpunit": "^7.0"
+  }
+}
