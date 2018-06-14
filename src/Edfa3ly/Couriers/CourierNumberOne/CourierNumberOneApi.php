@@ -16,7 +16,7 @@ class CourierNumberOneApi implements CourierNumberOneApiInterface
 
     public function createShipmentAndGetWaybill()
     {
-        // TODO: Implement createShipmentAndGetWayill() method.
+        // TODO: Implement createShipmentAndGetWaybill() method.
     }
 
     public function getShipmentTrackingDetails()

@@ -6,7 +6,7 @@
  * Time: 4:24 AM
  */
 
-namespace Edfa3ly\Couriers\Adapters\Common\Interfaces;
+namespace Edfa3ly\Couriers\Adapters\Interfaces;
 
 
 interface CouriersAdapter

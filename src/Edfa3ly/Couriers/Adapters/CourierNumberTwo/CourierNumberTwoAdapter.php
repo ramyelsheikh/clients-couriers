@@ -9,28 +9,42 @@
 namespace Edfa3ly\Couriers\Adapters\CourierNumberTwo;
 
 
-use Edfa3ly\Couriers\Adapters\Common\Interfaces\CouriersAdapter;
+use Edfa3ly\Couriers\Adapters\Interfaces\CouriersAdapter;
 use Edfa3ly\Couriers\CourierNumberTwo\CourierNumberTwoApi;
 
 class CourierNumberTwoAdapter implements CouriersAdapter
 {
-    private $courierNumberTwoApi;
+    /**
+     * @var CourierNumberTwoApi
+     */
+    private $courierApi;
 
-    public function __construct(CourierNumberTwoApi $courierNumberTwoApi)
+
+    public function __construct()
     {
-        $this->courierNumberTwoApi = $courierNumberTwoApi;
+        $this->setCourierApi(new CourierNumberTwoApi());
+    }
+
+    public function getCourierApi(): CourierNumberTwoApi
+    {
+        return $this->courierApi;
+    }
+
+    public function setCourierApi(CourierNumberTwoApi $courierApi)
+    {
+        $this->courierApi = $courierApi;
     }
 
     public function createShipment()
     {
-        $this->courierNumberTwoApi->createShipmentInstructions();
+        $this->getCourierApi()->createShipmentInstructions();
 
-        $this->courierNumberTwoApi->createShipmentInfo();
+        $this->getCourierApi()->createShipmentInfo();
     }
 
     public function trackShipment()
     {
-        return $this->courierNumberTwoApi->getShipmentTrackingDetails();
+        return $this->getCourierApi()->getShipmentTrackingDetails();
     }
 
 }

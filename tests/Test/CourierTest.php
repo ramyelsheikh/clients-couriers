@@ -8,9 +8,7 @@
 
 namespace Edfa3ly\Test;
 
-use Edfa3ly\Client\Client;
-use Edfa3ly\Couriers\Adapters\CourierNumberOne\CourierNumberOneAdapter;
-use Edfa3ly\Couriers\CourierNumberOne\CourierNumberOneApi;
+use Edfa3ly\Couriers\Factories\CourierFactory;
 use PHPUnit\Framework\TestCase;
 
 
@@ -18,10 +16,10 @@ class CourierTest extends TestCase
 {
     public function test()
     {
-        $courier1 = new Client(new CourierNumberOneAdapter(new CourierNumberOneApi()));
-        $courier1->createShipment();
-        $shipmentTracking = $courier1->trackShipment();
-        $output = "CourierNumberOne Tracking Details";
+        $courier = CourierFactory::build('Two');
+        $courier->createShipment();
+        $shipmentTracking = $courier->trackShipment();
+        $output = "CourierNumberTwo Tracking Details";
         $this->assertEquals($shipmentTracking, $output);
     }
 }

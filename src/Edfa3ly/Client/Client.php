@@ -10,7 +10,7 @@ namespace Edfa3ly\Client;
 
 
 use Edfa3ly\Client\Interfaces\ClientInterface;
-use Edfa3ly\Couriers\Adapters\Common\Interfaces\CouriersAdapter;
+use Edfa3ly\Couriers\Adapters\Interfaces\CouriersAdapter;
 
 class Client implements ClientInterface
 {
