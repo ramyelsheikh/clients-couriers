@@ -9,6 +9,7 @@
 namespace Edfa3ly\Couriers\Factories;
 
 use Edfa3ly\Couriers\Adapters\Interfaces\CouriersAdapter;
+use Edfa3ly\Couriers\Exceptions\CourierNotFoundException;
 
 class CourierFactory
 {
@@ -21,10 +22,7 @@ class CourierFactory
     public static function build(string $type = ''): CouriersAdapter
     {
 
-        if ($type == '') {
-            throw new \InvalidArgumentException('Invalid Courier Name.');
-        } else {
-
+        try {
             $type = ucfirst($type);
 
             //call the className with namespace
@@ -32,9 +30,10 @@ class CourierFactory
 
             if (class_exists($className)) {
                 return new $className();
-            } else {
-                throw new \InvalidArgumentException('Courier ' . $className . ' not found.');
             }
+        }
+        catch (CourierNotFoundException $e) {
+            echo $e->getMessage();
         }
     }
 
