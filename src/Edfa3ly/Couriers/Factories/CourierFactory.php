@@ -14,6 +14,10 @@ class CourierFactory
 {
     const COURIERS_ADAPTER_NAMESPACE = 'Edfa3ly\Couriers\Adapters';
 
+    /**
+     * @param string $type
+     * @return CouriersAdapter
+     */
     public static function build(string $type = ''): CouriersAdapter
     {
 
@@ -23,6 +27,7 @@ class CourierFactory
 
             $type = ucfirst($type);
 
+            //call the className with namespace
             $className = self::COURIERS_ADAPTER_NAMESPACE . '\CourierNumber' . $type . '\CourierNumber' . $type . 'Adapter';
 
             if (class_exists($className)) {

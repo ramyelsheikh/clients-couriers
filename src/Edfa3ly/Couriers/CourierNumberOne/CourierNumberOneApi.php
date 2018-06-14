@@ -14,11 +14,17 @@ use Edfa3ly\Couriers\CourierNumberOne\Interfaces\CourierNumberOneApiInterface;
 class CourierNumberOneApi implements CourierNumberOneApiInterface
 {
 
+    /*
+     * @function createShipmentAndGetWaybill
+     */
     public function createShipmentAndGetWaybill()
     {
         // TODO: Implement createShipmentAndGetWaybill() method.
     }
 
+    /*
+     * @function getShipmentTrackingDetails
+     */
     public function getShipmentTrackingDetails()
     {
         return 'CourierNumberOne Tracking Details';

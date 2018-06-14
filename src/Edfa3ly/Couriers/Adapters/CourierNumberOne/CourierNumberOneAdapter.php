@@ -20,26 +20,41 @@ class CourierNumberOneAdapter implements CouriersAdapter
     private $courierApi;
 
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->setCourierApi(new CourierNumberOneApi());
     }
 
+    /**
+     * @return CourierNumberOneApi
+     */
     public function getCourierApi(): CourierNumberOneApi
     {
         return $this->courierApi;
     }
 
+    /**
+     * @param $courierApi
+     */
     public function setCourierApi(CourierNumberOneApi $courierApi): void
     {
         $this->courierApi = $courierApi;
     }
 
+    /*
+     * @function createShipment
+     */
     public function createShipment()
     {
         $this->getCourierApi()->createShipmentAndGetWaybill();
     }
 
+    /*
+     * @function trackShipment
+     */
     public function trackShipment()
     {
         return $this->getCourierApi()->getShipmentTrackingDetails();

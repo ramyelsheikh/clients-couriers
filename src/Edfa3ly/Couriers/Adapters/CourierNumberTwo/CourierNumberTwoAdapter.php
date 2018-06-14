@@ -19,22 +19,33 @@ class CourierNumberTwoAdapter implements CouriersAdapter
      */
     private $courierApi;
 
-
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->setCourierApi(new CourierNumberTwoApi());
     }
 
+    /**
+     * @return CourierNumberTwoApi
+     */
     public function getCourierApi(): CourierNumberTwoApi
     {
         return $this->courierApi;
     }
 
+    /**
+     * @param $courierApi
+     */
     public function setCourierApi(CourierNumberTwoApi $courierApi)
     {
         $this->courierApi = $courierApi;
     }
 
+    /*
+     * @function createShipment
+     */
     public function createShipment()
     {
         $this->getCourierApi()->createShipmentInstructions();
@@ -42,6 +53,9 @@ class CourierNumberTwoAdapter implements CouriersAdapter
         $this->getCourierApi()->createShipmentInfo();
     }
 
+    /*
+     * @function trackShipment
+     */
     public function trackShipment()
     {
         return $this->getCourierApi()->getShipmentTrackingDetails();

@@ -14,18 +14,33 @@ use Edfa3ly\Couriers\Adapters\Interfaces\CouriersAdapter;
 
 class Client implements ClientInterface
 {
+
+    /*
+     * @var $courier
+     */
     protected $courier;
 
+
+    /**
+     * Constructor
+     * @param CouriersAdapter $courier
+     */
     public function __construct(CouriersAdapter $courier)
     {
         $this->courier = $courier;
     }
 
+    /*
+     * @function createShipment
+     */
     public function createShipment()
     {
         $this->courier->createShipment();
     }
 
+    /*
+     * @function trackShipment
+     */
     public function trackShipment()
     {
         return $this->courier->trackShipment();

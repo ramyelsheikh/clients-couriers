@@ -13,16 +13,25 @@ use Edfa3ly\Couriers\CourierNumberThree\Interfaces\CourierNumberThreeApiInterfac
 
 class CourierNumberThreeApi implements CourierNumberThreeApiInterface
 {
+    /*
+     * @function createShipmentAndGetWayill
+     */
     public function createShipmentAndGetWayill()
     {
         // TODO: Implement createShipmentAndGetWayill() method.
     }
 
+    /*
+     * @function registerNumberToGetTrackingDetails
+     */
     public function registerNumberToGetTrackingDetails()
     {
         // TODO: Implement registerNumberToGetTrackingDetails() method.
     }
 
+    /*
+     * @function getTrackingDetails
+     */
     public function getTrackingDetails()
     {
         return 'CourierNumberThree Tracking Details';
